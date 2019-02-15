@@ -78,7 +78,7 @@ idx2word_eng = {v:k for k, v in word2idx_inputs.items()}
 # don't filter out special characters
 # otherwise <sos> and <eos> won't appear
 tokenizer_outputs = Tokenizer(num_words=MAX_NUM_WORDS, filters='')
-tokenizer_outputs.fit_on_texts(target_texts + target_texts_inputs) # inefficient, oh well
+tokenizer_outputs.fit_on_texts(target_texts + target_texts_inputs) 
 target_sequences = tokenizer_outputs.texts_to_sequences(target_texts)
 target_sequences_inputs = tokenizer_outputs.texts_to_sequences(target_texts_inputs)
 
