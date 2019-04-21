@@ -143,7 +143,13 @@ for word, i in word2idx_inputs.items():
 
 
 # create embedding layer
-
+embedding_layer = Embedding(
+  num_words,
+  EMBEDDING_DIM,
+  weights=[embedding_matrix],
+  input_length=max_len_input,
+  # trainable=True
+)
 
 # create targets, since we cannot use sparse
 # categorical cross entropy when we have sequences
